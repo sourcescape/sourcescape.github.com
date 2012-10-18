@@ -1,0 +1,35 @@
+---
+title: Home
+created_at: 2008-08-02 14:06:40.000000 -06:00
+filter: haml
+layout: image
+---
+%p.callout
+  We are a Greenville, South Carolina based web development firm 
+  specializing helping your business deliver quality software.           
+%p 
+  We strive to be relevant, simple, and offer exceptional service with unparalleled integrity.
+%p
+  Started in the upstate of South Carolina in 1999, we have worked with
+  numerous small businesses to help them deliver a better service to their
+  customers or, in some cases, become much more efficent themselves.
+%blockquote{ :cite => "Dave Wike" }
+  %p It's one thing to have a quality coder... It's quite another to have a genius consultant that views a project from top to bottom before he writes even a line of code to make sure every angle and possible issue/problem has been addressed. And even then (because a client always thinks of something after-the-fact!), Sourcescape was still flexible in providing solutions to make sure we were happy.
+  .author Dave Wike, President
+  .company The JCA Company
+%p
+  Feel free to browse through some of our
+  %a{ :href => "work.html"}recent projects
+  and 
+  %a{ :href => "contact.html" }Let us know
+  how we can help you.
+
+-#
+  #client_login
+    %form{ :action => "http://sourcescape.projectpath.com/login/authenticate", :method => "post", :style => "margin: 0px" }
+      %span Client Login &gt;&gt;
+      username: 
+      %input{ :type => "text", :name => "user_name", :style => "font-size: 14px;" }
+      password: 
+      %input{ :type => "text", :name => "password", :style => "font-size: 14px;" }
+      %input{ :type => "submit", :value => "Sign in" }

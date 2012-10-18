@@ -1,0 +1,205 @@
+---
+extension: css
+filter:    sass
+layout:    nil   # no layout
+---
+
+$black        : #000
+$white        : #FFF
+$dark_blue    : #2F4E6F
+$med_blue     : #98B1C4
+$light_blue   : #C8D7E3
+$orange       : #E15119
+$dark_gray    : #353535
+$light_gray   : #CCC
+
+body
+  background-color : $dark_gray
+  font-size: 14px
+  color: #333
+  background-image: url(../images/header_back.gif)
+  background-repeat: repeat-x
+  background-position: top left
+  font-family: "Lucida Grande", "Lucida Sans Unicode", helvetica, verdana, arial, times, "Times New Roman", sans-serif
+#container
+  // background-color: #353535
+  // color: #ccc
+#header
+  height: 100px
+  margin-bottom: 2em
+  #logo
+    background-image: url(../images/logo.gif)
+    background-repeat: no-repeat
+    background-position: top right
+    height: 100px
+  #menu
+    ul
+      padding: 0
+      li
+        font-size: 1.1em
+        padding: 0 10px
+        display: inline
+        a
+          color : $light_gray
+          padding: 5px
+          &:hover
+            background-color : $orange
+            color : $light_blue
+            text-decoration: none
+            -moz-border-radius: .5em
+            -webkit-border-radius: .5em
+        
+  #tagline
+    color: #E15119
+    font-size: 13px
+    font-style: italic
+    font-family: Georgia
+    text-align: right
+#breadcrumbs
+  background-color: #e4e4e4
+  padding-bottom: 2px
+  margin-bottom: 1em
+  ul.breadcrumbs
+    padding: 0
+    margin: 0
+    li
+      color : $dark_blue
+      font-size: 0.75em
+      display: inline
+      a
+        color : $dark_blue
+        background: transparent url(../images/arrow.png) no-repeat center right
+        padding-right: 18px
+        &:hover
+          color : $orange
+       
+#main
+  margin: 1em 0
+  padding: 1em 0
+  color : $dark_gray
+  background-color : $white
+  -moz-border-radius: .5em
+  -webkit-border-radius: .5em
+  
+  #sidebar
+    margin-top: 20px
+    text-align: center
+    height: 100%
+    img
+      padding: 2px
+      border: 1px solid #999
+      
+  #content
+    h1
+      font-size: 2em
+      padding: 10px 0 5px 0
+      border-bottom: 1px solid #999
+      color : $dark_blue
+      letter-spacing: -0.05em
+    h2
+      color : $orange
+      font-size: 1.75em
+      padding: 5px 0
+      letter-spacing: -0.05em
+      a
+        text-decoration: none
+
+#client_login
+  clear: left
+  text-align: right
+  padding: 10px
+  background: #2F4E6F
+  span
+    color: #E15119
+.bright
+  color: #E15119
+
+#footer
+  color : $med_blue
+  text-align: center
+  margin-bottom: 2em
+
+a
+  color : $orange
+  &:hover
+    color : $dark_blue
+    background-color : $light_blue
+    text-decoration: none
+    
+p.callout
+  font-size: 1.5em
+  letter-spacing: -.1em
+  background-color : $light_gray
+  color : $dark_blue
+  -moz-border-radius: .5em
+  -webkit-border-radius: .5em
+  padding: 20px
+  margin: 1em 0
+
+#about_container
+  li
+    font-size: 1.25em
+    color : $dark_blue
+
+#contact_container
+  .address
+    font-size: 1.25em
+  
+#work_container
+  h2
+    padding-bottom: 0
+    a
+      margin: 2px 10px
+      padding: 0.25em
+      font-size: 65%
+      color : $dark_blue
+      background-color : $light_blue
+      &:hover
+        background-color : $dark_blue
+        color : $white
+  img
+    float: right
+    margin: 10px 20px 10px 10px
+    padding: 1em
+    border: 1px solid #999
+  span.label
+    color : $dark_blue
+    font-weight: bold
+  .client
+    padding: 20px 0
+    border-bottom: 1px solid $light_blue
+    
+#people_container
+  h2
+    padding-bottom: 0
+    margin-bottom: 0
+  h3
+    font-size: 85%
+    font-style: italic
+    
+.side_image
+  text-align: right
+  
+blockquote
+  font-size: 85%
+  text-indent: 25px
+  background: url(../images/quotes1.png)
+  background-position: 0 2px
+  background-repeat: no-repeat
+  p
+    color : $dark_blue
+    display: inline
+    margin: 0
+    padding-right: 24px
+    background: url(../images/quotes2.png)
+    background-position: bottom right
+    background-repeat: no-repeat
+  .author
+    font-size: 100%
+    font-weight: bold
+    color : $black
+    font-style: normal
+    text-align: right
+  .company
+    text-align: right
+    font-style: normal

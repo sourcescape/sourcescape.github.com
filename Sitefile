@@ -1,0 +1,13 @@
+SITE.user = 'ryanwood'
+SITE.host = 'sourcescape.com'
+SITE.remote_dir = '/u/apps/sourcescape.com/current/html/'
+
+
+["\\.DS_Store", "\\.git"].each { |x| SITE.exclude << x }
+
+task :default => :build
+
+desc 'deploy the site to the webserver'
+task :deploy => [:build, 'deploy:rsync']
+
+# EOF

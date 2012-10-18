@@ -1,0 +1,58 @@
+---
+extension: html
+filter:    haml
+---
+!!! Strict
+%html{:lang => "en-us", "xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "content-type"}
+    %title= title(@page)
+    %meta{:name => "author", :content => 'Ryan Wood'}
+    %meta{:name => "description", :content => 'Sourcescape is Greenville, South Carolina based web develoment firm that focuses on helping your company deliver quality software.'}
+    %meta{:name => "keywords", :content => 'Sourcescape, Ruby, Ruby on Rails, Design, Development, Ryan Wood, Greer Development, Greenville Development, Git Training, Web Consulting'}
+    %meta{:name => "google-site-verification", :content => 'T5psD-gMVA5Zu7F7V_6QCpsbrsV9pz_imPjBuyK0cn8'}
+    / Blueprint CSS Framework
+    %link{:href => "/css/blueprint/screen.css", :media => "screen, projection", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "/css/blueprint/print.css", :media => "print", :rel => "stylesheet", :type => "text/css"}
+    /[if IE]
+      %link{:href => "/css/blueprint/ie.css", :media => "screen, projection", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "/css/coderay.css", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "/css/site.css", :media => "screen, projection", :rel => "stylesheet", :type => "text/css"}
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-3709570-5']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+  %body
+    #container.container
+      #header.span-24.last
+        %a{ :href => "index.html" }
+          #logo
+        #menu.span-16
+          %ul
+            %li= link_to_page('Home')
+            %li= link_to_page('About')
+            %li= link_to_page('Work')
+            %li= link_to_page('People')
+            %li= link_to_page('Blog')
+            %li= link_to_page('Contact')
+          -#
+            %ul
+              - links = @pages.find(:all, :in_directory => '/').collect do |page|
+                %li
+                  = link_to(page.title, page)
+        #tagline.span-8.last Web Solutions for the Enlightened Mind
+      #main.span-24.last
+        - if @page.title != 'Home'
+          #breadcrumbs.prepend-1.span-23
+            = breadcrumbs(@page)
+        = @content
+      #footer.column.span-20.prepend-2.append-2.last
+        Sourcescape, LLC | 404 Barley Mill Drive | Greer, SC 29651
+        %br
+        Copyright &copy; 2010. All Rights Reserved.
