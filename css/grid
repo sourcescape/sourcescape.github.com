@@ -1,0 +1,80 @@
+/* line 12, output/css/grid */
+.grid_1 {
+  width: 60px;
+}
+
+/* line 12, output/css/grid */
+.grid_2 {
+  width: 140px;
+}
+
+/* line 12, output/css/grid */
+.grid_3 {
+  width: 220px;
+}
+
+/* line 12, output/css/grid */
+.grid_4 {
+  width: 300px;
+}
+
+/* line 12, output/css/grid */
+.grid_5 {
+  width: 380px;
+}
+
+/* line 12, output/css/grid */
+.grid_6 {
+  width: 460px;
+}
+
+/* line 12, output/css/grid */
+.grid_7 {
+  width: 540px;
+}
+
+/* line 12, output/css/grid */
+.grid_8 {
+  width: 620px;
+}
+
+/* line 12, output/css/grid */
+.grid_9 {
+  width: 700px;
+}
+
+/* line 12, output/css/grid */
+.grid_10 {
+  width: 780px;
+}
+
+/* line 12, output/css/grid */
+.grid_11 {
+  width: 860px;
+}
+
+/* line 12, output/css/grid */
+.grid_12 {
+  width: 940px;
+}
+
+/* line 22, output/css/grid */
+.row {
+  width: 960px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+/* line 26, output/css/grid */
+.row .row {
+  margin: 0 -10px;
+  width: auto;
+  display: inline-block;
+}
+
+/* line 31, output/css/grid */
+.column {
+  float: left;
+  margin: 0 10px;
+  overflow: hidden;
+  display: inline;
+}

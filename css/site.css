@@ -1,0 +1,181 @@
+body {
+  background-color: #353535;
+  font-size: 14px;
+  color: #333333;
+  background-image: url(../images/header_back.gif);
+  background-repeat: repeat-x;
+  background-position: top left;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", helvetica, verdana, arial, times, "Times New Roman", sans-serif; }
+
+#header {
+  height: 100px;
+  margin-bottom: 2em; }
+  #header #logo {
+    background-image: url(../images/logo.gif);
+    background-repeat: no-repeat;
+    background-position: top right;
+    height: 100px; }
+  #header #menu ul {
+    padding: 0; }
+    #header #menu ul li {
+      font-size: 1.1em;
+      padding: 0 10px;
+      display: inline; }
+      #header #menu ul li a {
+        color: #cccccc;
+        padding: 5px; }
+        #header #menu ul li a:hover {
+          background-color: #e15119;
+          color: #c8d7e3;
+          text-decoration: none;
+          -moz-border-radius: 0.5em;
+          -webkit-border-radius: 0.5em; }
+  #header #tagline {
+    color: #e15119;
+    font-size: 13px;
+    font-style: italic;
+    font-family: Georgia;
+    text-align: right; }
+
+#breadcrumbs {
+  background-color: #e4e4e4;
+  padding-bottom: 2px;
+  margin-bottom: 1em; }
+  #breadcrumbs ul.breadcrumbs {
+    padding: 0;
+    margin: 0; }
+    #breadcrumbs ul.breadcrumbs li {
+      color: #2f4e6f;
+      font-size: 0.75em;
+      display: inline; }
+      #breadcrumbs ul.breadcrumbs li a {
+        color: #2f4e6f;
+        background: transparent url(../images/arrow.png) no-repeat center right;
+        padding-right: 18px; }
+        #breadcrumbs ul.breadcrumbs li a:hover {
+          color: #e15119; }
+
+#main {
+  margin: 1em 0;
+  padding: 1em 0;
+  color: #353535;
+  background-color: white;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em; }
+  #main #sidebar {
+    margin-top: 20px;
+    text-align: center;
+    height: 100%; }
+    #main #sidebar img {
+      padding: 2px;
+      border: 1px solid #999999; }
+  #main #content h1 {
+    font-size: 2em;
+    padding: 10px 0 5px 0;
+    border-bottom: 1px solid #999999;
+    color: #2f4e6f;
+    letter-spacing: -0.05em; }
+  #main #content h2 {
+    color: #e15119;
+    font-size: 1.75em;
+    padding: 5px 0;
+    letter-spacing: -0.05em; }
+    #main #content h2 a {
+      text-decoration: none; }
+
+#client_login {
+  clear: left;
+  text-align: right;
+  padding: 10px;
+  background: #2f4e6f; }
+  #client_login span {
+    color: #e15119; }
+
+.bright {
+  color: #e15119; }
+
+#footer {
+  color: #98b1c4;
+  text-align: center;
+  margin-bottom: 2em; }
+
+a {
+  color: #e15119; }
+  a:hover {
+    color: #2f4e6f;
+    background-color: #c8d7e3;
+    text-decoration: none; }
+
+p.callout {
+  font-size: 1.5em;
+  letter-spacing: -0.1em;
+  background-color: #cccccc;
+  color: #2f4e6f;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  padding: 20px;
+  margin: 1em 0; }
+
+#about_container li {
+  font-size: 1.25em;
+  color: #2f4e6f; }
+
+#contact_container .address {
+  font-size: 1.25em; }
+
+#work_container h2 {
+  padding-bottom: 0; }
+  #work_container h2 a {
+    margin: 2px 10px;
+    padding: 0.25em;
+    font-size: 65%;
+    color: #2f4e6f;
+    background-color: #c8d7e3; }
+    #work_container h2 a:hover {
+      background-color: #2f4e6f;
+      color: white; }
+#work_container img {
+  float: right;
+  margin: 10px 20px 10px 10px;
+  padding: 1em;
+  border: 1px solid #999999; }
+#work_container span.label {
+  color: #2f4e6f;
+  font-weight: bold; }
+#work_container .client {
+  padding: 20px 0;
+  border-bottom: 1px solid #c8d7e3; }
+
+#people_container h2 {
+  padding-bottom: 0;
+  margin-bottom: 0; }
+#people_container h3 {
+  font-size: 85%;
+  font-style: italic; }
+
+.side_image {
+  text-align: right; }
+
+blockquote {
+  font-size: 85%;
+  text-indent: 25px;
+  background: url(../images/quotes1.png);
+  background-position: 0 2px;
+  background-repeat: no-repeat; }
+  blockquote p {
+    color: #2f4e6f;
+    display: inline;
+    margin: 0;
+    padding-right: 24px;
+    background: url(../images/quotes2.png);
+    background-position: bottom right;
+    background-repeat: no-repeat; }
+  blockquote .author {
+    font-size: 100%;
+    font-weight: bold;
+    color: black;
+    font-style: normal;
+    text-align: right; }
+  blockquote .company {
+    text-align: right;
+    font-style: normal; }

@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+  <url>
+    <loc>http://sourcescape.com/</loc>
+    <lastmod>2010-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>http://sourcescape.com/contact.html</loc>
+    <lastmod>2010-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>http://sourcescape.com/about.html</loc>
+    <lastmod>2010-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>http://sourcescape.com/blog.html</loc>
+    <lastmod>2010-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>http://sourcescape.com/work.html</loc>
+    <lastmod>2010-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>http://sourcescape.com/people.html</loc>
+    <lastmod>2010-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+</urlset>
