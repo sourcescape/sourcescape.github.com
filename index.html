@@ -1,88 +1,319 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html lang='en-us' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
-  <head>
-    <meta content='text/html; charset=utf-8' http-equiv='content-type' />
-    <title>Sourcescape</title>
-    <meta content='Ryan Wood' name='author' />
-    <meta content='Sourcescape is Greenville, South Carolina based web develoment firm that focuses on helping your company deliver quality software.' name='description' />
-    <meta content='Sourcescape, Ruby, Ruby on Rails, Design, Development, Ryan Wood, Greer Development, Greenville Development, Git Training, Web Consulting' name='keywords' />
-    <meta content='T5psD-gMVA5Zu7F7V_6QCpsbrsV9pz_imPjBuyK0cn8' name='google-site-verification' />
-    <!-- Blueprint CSS Framework -->
-    <link href='/css/blueprint/screen.css' media='screen, projection' rel='stylesheet' type='text/css' />
-    <link href='/css/blueprint/print.css' media='print' rel='stylesheet' type='text/css' />
-    <!--[if IE]>
-      <link href='/css/blueprint/ie.css' media='screen, projection' rel='stylesheet' type='text/css' />
-    <![endif]-->
-    <link href='/css/coderay.css' rel='stylesheet' type='text/css' />
-    <link href='/css/site.css' media='screen, projection' rel='stylesheet' type='text/css' />
-    <script type='text/javascript'>
-      //<![CDATA[
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-3709570-5']);
-        _gaq.push(['_trackPageview']);
-        
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-      //]]>
-    </script>
-  </head>
-  <body>
-    <div class='container' id='container'>
-      <div class='span-24 last' id='header'>
-        <a href='index.html'>
-          <div id='logo'></div>
-        </a>
-        <div class='span-16' id='menu'>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/work.html">Work</a></li>
-            <li><a href="/people.html">People</a></li>
-            <li><a href="/blog.html">Blog</a></li>
-            <li><a href="/contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class='span-8 last' id='tagline'>Web Solutions for the Enlightened Mind</div>
-      </div>
-      <div class='span-24 last' id='main'>
-        <div class='prepend-1 colborder span-8' id='sidebar'>
-          <img src='images/web_solutions_nature.gif' />
-        </div>
-        <div class='append-1 span-13 last' id='content'>
-          <p class='callout'>
-            We are a Greenville, South Carolina based web development firm
-            specializing helping your business deliver quality software.
-          </p>
-          <p>
-            We strive to be relevant, simple, and offer exceptional service with unparalleled integrity.
-          </p>
-          <p>
-            Started in the upstate of South Carolina in 1999, we have worked with
-            numerous small businesses to help them deliver a better service to their
-            customers or, in some cases, become much more efficent themselves.
-          </p>
-          <blockquote cite='Dave Wike'>
-            <p>It's one thing to have a quality coder... It's quite another to have a genius consultant that views a project from top to bottom before he writes even a line of code to make sure every angle and possible issue/problem has been addressed. And even then (because a client always thinks of something after-the-fact!), Sourcescape was still flexible in providing solutions to make sure we were happy.</p>
-            <div class='author'>Dave Wike, President</div>
-            <div class='company'>The JCA Company</div>
-          </blockquote>
-          <p>
-            Feel free to browse through some of our
-            <a href='work.html'>recent projects</a>
-            and
-            <a href='contact.html'>Let us know</a>
-            how we can help you.
-          </p>
-        </div>
-      </div>
-      <div class='column span-20 prepend-2 append-2 last' id='footer'>
-        Sourcescape, LLC | 404 Barley Mill Drive | Greer, SC 29651
-        <br />
-        Copyright &copy; 2010. All Rights Reserved.
-      </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sourcescape</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --off: #f2f2f0;
+      --mid: #888;
+      --rule: #d0d0cc;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 300;
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
+
+    /* ── TOP HEADER BAR ── */
+    header {
+      border-bottom: 3px solid var(--black);
+      padding: 1.25rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      opacity: 0;
+      animation: fadeIn 0.4s ease 0.05s forwards;
+    }
+
+    .header-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    .header-year {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      color: var(--mid);
+    }
+
+    /* ── MAIN ── */
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* Left column */
+    .col-left {
+      padding: 4rem 2.5rem;
+      border-right: 1px solid var(--rule);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .wordmark {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      color: var(--black);
+      opacity: 0;
+      animation: slideRight 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+    }
+
+    .wordmark-sub {
+      display: block;
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 700;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      -webkit-text-stroke: 2px var(--black);
+      color: transparent;
+    }
+
+    .col-left-bottom {
+      opacity: 0;
+      animation: fadeIn 0.5s ease 0.7s forwards;
+    }
+
+    .descriptor {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 1rem;
+    }
+
+    .tagline {
+      font-size: 0.92rem;
+      line-height: 1.8;
+      color: #444;
+      max-width: 320px;
+    }
+
+    /* Right column */
+    .col-right {
+      padding: 4rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .services-header {
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeIn 0.5s ease 0.45s forwards;
+    }
+
+    .services-list {
+      list-style: none;
+      flex: 1;
+      opacity: 0;
+      animation: fadeIn 0.5s ease 0.55s forwards;
+    }
+
+    .services-list li {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 700;
+      font-size: clamp(0.85rem, 1.8vw, 1.1rem);
+      letter-spacing: -0.01em;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .services-list li:first-child {
+      border-top: 1px solid var(--rule);
+    }
+
+    .list-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 300;
+      font-size: 0.65rem;
+      color: var(--mid);
+      letter-spacing: 0.1em;
+    }
+
+    /* Personal link */
+    .personal-link-wrap {
+      margin-top: 3rem;
+      opacity: 0;
+      animation: fadeIn 0.5s ease 0.85s forwards;
+    }
+
+    .personal-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--black);
+      text-decoration: none;
+      padding: 0.8rem 1.2rem;
+      border: 2px solid var(--black);
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .personal-link:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .personal-link svg {
+      transition: transform 0.15s;
+    }
+
+    .personal-link:hover svg path {
+      stroke: var(--white);
+    }
+
+    .personal-link:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 1rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      opacity: 0;
+      animation: fadeIn 0.4s ease 1s forwards;
+    }
+
+    .footer-copy {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--mid);
+    }
+
+    /* ── BIG BACKGROUND TEXT ── */
+    .bg-text {
+      position: fixed;
+      bottom: -0.1em;
+      left: -0.02em;
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 900;
+      font-size: 22vw;
+      line-height: 1;
+      color: transparent;
+      -webkit-text-stroke: 1px #e8e8e5;
+      pointer-events: none;
+      z-index: -1;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @keyframes slideRight {
+      from { opacity: 0; transform: translateX(-20px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      header { padding: 1rem 1.25rem; }
+
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      .col-left {
+        padding: 2.5rem 1.25rem;
+        border-right: none;
+        border-bottom: 1px solid var(--rule);
+        gap: 2.5rem;
+      }
+
+      .col-right {
+        padding: 2.5rem 1.25rem;
+      }
+
+      footer { padding: 1rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg-text">SS</div>
+
+<header>
+  <span class="header-label">Software &amp; Technology</span>
+  <span class="header-year">Est. 2010</span>
+</header>
+
+<main>
+  <div class="col-left">
+    <div>
+      <h1 class="wordmark">
+        SOURCE
+        <span class="wordmark-sub">SCAPE</span>
+      </h1>
     </div>
-  </body>
+    <div class="col-left-bottom">
+      <p class="descriptor">Independent Technical Practice</p>
+      <p class="tagline">Architecture, engineering, and leadership for teams that need a seasoned hand — without the overhead.</p>
+    </div>
+  </div>
+
+  <div class="col-right">
+    <div>
+      <p class="services-header">Capabilities</p>
+      <ul class="services-list">
+        <li>Software Architecture <span class="list-num">01</span></li>
+        <li>Fractional CTO <span class="list-num">02</span></li>
+        <li>Rails Development <span class="list-num">03</span></li>
+        <li>Technical Strategy <span class="list-num">04</span></li>
+        <li>Team Mentorship <span class="list-num">05</span></li>
+      </ul>
+    </div>
+
+    <div class="personal-link-wrap">
+      <a href="#" class="personal-link">
+        About the founder
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 7H12M8 3L12 7L8 11" stroke="#0a0a0a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <span class="footer-copy">© <script>document.write(new Date().getFullYear())</script> Sourcescape LLC</span>
+  <span class="footer-copy">All rights reserved</span>
+</footer>
+
+</body>
 </html>
