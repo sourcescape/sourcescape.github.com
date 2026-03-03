@@ -1,298 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sourcescape</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet" />
-  <script>if(new URLSearchParams(location.search).get('theme')==='dark')document.documentElement.dataset.theme='dark';</script>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --black: #0a0a0a;
-      --white: #ffffff;
-      --off: #f2f2f0;
-      --mid: #888;
-      --rule: #d0d0cc;
-      --tagline: #444;
-      --bg-text-stroke: #e8e8e5;
-    }
-
-    body {
-      background: var(--white);
-      color: var(--black);
-      font-family: 'IBM Plex Mono', monospace;
-      font-weight: 300;
-      min-height: 100vh;
-      display: grid;
-      grid-template-rows: auto 1fr auto;
-    }
-
-    /* ── TOP HEADER BAR ── */
-    header {
-      border-bottom: 3px solid var(--black);
-      padding: 1.25rem 2.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      opacity: 0;
-      animation: fadeIn 0.4s ease 0.05s forwards;
-    }
-
-    .header-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--mid);
-    }
-
-    .header-year {
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      color: var(--mid);
-    }
-
-    /* ── MAIN ── */
-    main {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    /* Left column */
-    .col-left {
-      padding: 4rem 2.5rem;
-      border-right: 1px solid var(--rule);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .wordmark {
-      font-family: 'Unbounded', sans-serif;
-      font-weight: 900;
-      font-size: clamp(2.8rem, 6vw, 5rem);
-      line-height: 0.95;
-      letter-spacing: -0.03em;
-      color: var(--black);
-      opacity: 0;
-      animation: slideRight 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
-    }
-
-    .wordmark-sub {
-      display: block;
-      font-family: 'Unbounded', sans-serif;
-      font-weight: 700;
-      font-size: clamp(2.8rem, 6vw, 5rem);
-      line-height: 0.95;
-      letter-spacing: -0.03em;
-      -webkit-text-stroke: 2px var(--black);
-      color: transparent;
-    }
-
-    .col-left-bottom {
-      opacity: 0;
-      animation: fadeIn 0.5s ease 0.7s forwards;
-    }
-
-    .descriptor {
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--mid);
-      margin-bottom: 1rem;
-    }
-
-    .tagline {
-      font-size: 0.92rem;
-      line-height: 1.8;
-      color: var(--tagline);
-      max-width: 320px;
-    }
-
-    /* Right column */
-    .col-right {
-      padding: 4rem 2.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .services-header {
-      font-size: 0.6rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--mid);
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeIn 0.5s ease 0.45s forwards;
-    }
-
-    .services-list {
-      list-style: none;
-      flex: 1;
-      opacity: 0;
-      animation: fadeIn 0.5s ease 0.55s forwards;
-    }
-
-    .services-list li {
-      font-family: 'Unbounded', sans-serif;
-      font-weight: 700;
-      font-size: clamp(0.85rem, 1.8vw, 1.1rem);
-      letter-spacing: -0.01em;
-      padding: 0.9rem 0;
-      border-bottom: 1px solid var(--rule);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .services-list li:first-child {
-      border-top: 1px solid var(--rule);
-    }
-
-    .list-num {
-      font-family: 'IBM Plex Mono', monospace;
-      font-weight: 300;
-      font-size: 0.65rem;
-      color: var(--mid);
-      letter-spacing: 0.1em;
-    }
-
-    /* Personal link */
-    .personal-link-wrap {
-      margin-top: 3rem;
-      opacity: 0;
-      animation: fadeIn 0.5s ease 0.85s forwards;
-    }
-
-    .personal-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--black);
-      text-decoration: none;
-      padding: 0.8rem 1.2rem;
-      border: 2px solid var(--black);
-      transition: background 0.15s, color 0.15s;
-    }
-
-    .personal-link:hover {
-      background: var(--black);
-      color: var(--white);
-    }
-
-    .personal-link svg {
-      transition: transform 0.15s;
-    }
-
-    .personal-link svg path {
-      stroke: var(--black);
-    }
-
-    .personal-link:hover svg path {
-      stroke: var(--white);
-    }
-
-    .personal-link:hover svg {
-      transform: translateX(4px);
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      padding: 1rem 2.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      opacity: 0;
-      animation: fadeIn 0.4s ease 1s forwards;
-    }
-
-    .footer-copy {
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      color: var(--mid);
-    }
-
-    /* ── BIG BACKGROUND TEXT ── */
-    .bg-text {
-      position: fixed;
-      bottom: -0.1em;
-      left: -0.02em;
-      font-family: 'Unbounded', sans-serif;
-      font-weight: 900;
-      font-size: 22vw;
-      line-height: 1;
-      color: transparent;
-      -webkit-text-stroke: 1px var(--bg-text-stroke);
-      pointer-events: none;
-      z-index: -1;
-      user-select: none;
-      white-space: nowrap;
-    }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
-
-    @keyframes slideRight {
-      from { opacity: 0; transform: translateX(-20px); }
-      to   { opacity: 1; transform: translateX(0); }
-    }
-
-    /* ── DARK MODE ── */
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --black: #e8e8e5;
-        --white: #0f0f0d;
-        --off: #1a1a18;
-        --mid: #666;
-        --rule: #2c2c2a;
-        --tagline: #999;
-        --bg-text-stroke: #1e1e1c;
+  <meta name="description" content="Independent technical practice offering software architecture, fractional CTO services, Rails development, and technical leadership.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sourcescape.com/">
+  <meta property="og:title" content="Sourcescape">
+  <meta property="og:description" content="Independent technical practice offering software architecture, fractional CTO services, Rails development, and technical leadership.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sourcescape">
+  <meta name="twitter:description" content="Independent technical practice offering software architecture, fractional CTO services, Rails development, and technical leadership.">
+  <link rel="canonical" href="https://sourcescape.com/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function() {
+      var param = new URLSearchParams(location.search).get('theme');
+      var saved = localStorage.getItem('theme');
+      var theme = param || saved;
+      if (theme === 'dark' || theme === 'light') {
+        document.documentElement.dataset.theme = theme;
       }
+    })();
+    function toggleTheme() {
+      var isDark = document.documentElement.dataset.theme === 'dark' ||
+        (!document.documentElement.dataset.theme &&
+         window.matchMedia('(prefers-color-scheme: dark)').matches);
+      var next = isDark ? 'light' : 'dark';
+      document.documentElement.dataset.theme = next;
+      localStorage.setItem('theme', next);
     }
-
-    html[data-theme="dark"] {
-      --black: #e8e8e5;
-      --white: #0f0f0d;
-      --off: #1a1a18;
-      --mid: #666;
-      --rule: #2c2c2a;
-      --tagline: #999;
-      --bg-text-stroke: #1e1e1c;
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 640px) {
-      header { padding: 1rem 1.25rem; }
-
-      main {
-        grid-template-columns: 1fr;
-      }
-
-      .col-left {
-        padding: 2.5rem 1.25rem;
-        border-right: none;
-        border-bottom: 1px solid var(--rule);
-        gap: 2.5rem;
-      }
-
-      .col-right {
-        padding: 2.5rem 1.25rem;
-      }
-
-      footer { padding: 1rem 1.25rem; }
-    }
-  </style>
+  </script>
 </head>
 <body>
 
@@ -300,10 +43,13 @@
 
 <header>
   <span class="header-label">Systems &amp; Craft</span>
-  <span class="header-year">Est. 2010</span>
+  <div class="header-right">
+    <span class="header-year">Est. 2010</span>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle color theme">◑</button>
+  </div>
 </header>
 
-<main>
+<main class="main--split">
   <div class="col-left">
     <div>
       <h1 class="wordmark">
@@ -330,12 +76,20 @@
     </div>
 
     <div class="personal-link-wrap">
-      <a href="https://ryanwood.com/pages/about" class="personal-link">
-        About the founder
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2 7H12M8 3L12 7L8 11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
+      <div class="cta-group">
+        <a href="mailto:hello@sourcescape.com" class="personal-link personal-link--filled">
+          Get in touch
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M2 7H12M8 3L12 7L8 11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="https://ryanwood.com/pages/about" class="personal-link">
+          About the founder
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M2 7H12M8 3L12 7L8 11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </div>
 </main>

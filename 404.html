@@ -1,223 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sourcescape — Page Not Found</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet" />
-  <script>if(new URLSearchParams(location.search).get('theme')==='dark')document.documentElement.dataset.theme='dark';</script>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --black: #0a0a0a;
-      --white: #ffffff;
-      --off: #f2f2f0;
-      --mid: #888;
-      --rule: #d0d0cc;
-      --tagline: #444;
-      --bg-text-stroke: #e8e8e5;
-    }
-
-    body {
-      background: var(--white);
-      color: var(--black);
-      font-family: 'IBM Plex Mono', monospace;
-      font-weight: 300;
-      min-height: 100vh;
-      display: grid;
-      grid-template-rows: auto 1fr auto;
-    }
-
-    /* ── TOP HEADER BAR ── */
-    header {
-      border-bottom: 3px solid var(--black);
-      padding: 1.25rem 2.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      opacity: 0;
-      animation: fadeIn 0.4s ease 0.05s forwards;
-    }
-
-    .header-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--mid);
-    }
-
-    .header-year {
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      color: var(--mid);
-    }
-
-    /* ── MAIN ── */
-    main {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 4rem 2.5rem;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .error-code {
-      font-family: 'Unbounded', sans-serif;
-      font-weight: 900;
-      font-size: clamp(2.8rem, 6vw, 5rem);
-      line-height: 0.95;
-      letter-spacing: -0.03em;
-      -webkit-text-stroke: 2px var(--black);
-      color: transparent;
-      opacity: 0;
-      animation: slideRight 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
-    }
-
-    .error-label {
-      font-family: 'Unbounded', sans-serif;
-      font-weight: 900;
-      font-size: clamp(2.8rem, 6vw, 5rem);
-      line-height: 0.95;
-      letter-spacing: -0.03em;
-      color: var(--black);
-      margin-bottom: 3rem;
-      opacity: 0;
-      animation: slideRight 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
-    }
-
-    .error-body {
-      opacity: 0;
-      animation: fadeIn 0.5s ease 0.7s forwards;
-    }
-
-    .descriptor {
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--mid);
-      margin-bottom: 1rem;
-    }
-
-    .message {
-      font-size: 0.92rem;
-      line-height: 1.8;
-      color: var(--tagline);
-      max-width: 380px;
-      margin-bottom: 2.5rem;
-    }
-
-    .home-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--black);
-      text-decoration: none;
-      padding: 0.8rem 1.2rem;
-      border: 2px solid var(--black);
-      transition: background 0.15s, color 0.15s;
-    }
-
-    .home-link:hover {
-      background: var(--black);
-      color: var(--white);
-    }
-
-    .home-link svg {
-      transition: transform 0.15s;
-    }
-
-    .home-link svg path {
-      stroke: var(--black);
-    }
-
-    .home-link:hover svg path {
-      stroke: var(--white);
-    }
-
-    .home-link:hover svg {
-      transform: translateX(4px);
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      padding: 1rem 2.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      opacity: 0;
-      animation: fadeIn 0.4s ease 1s forwards;
-    }
-
-    .footer-copy {
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      color: var(--mid);
-    }
-
-    /* ── BIG BACKGROUND TEXT ── */
-    .bg-text {
-      position: fixed;
-      bottom: -0.1em;
-      left: -0.02em;
-      font-family: 'Unbounded', sans-serif;
-      font-weight: 900;
-      font-size: 22vw;
-      line-height: 1;
-      color: transparent;
-      -webkit-text-stroke: 1px var(--bg-text-stroke);
-      pointer-events: none;
-      z-index: -1;
-      user-select: none;
-      white-space: nowrap;
-    }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
-
-    @keyframes slideRight {
-      from { opacity: 0; transform: translateX(-20px); }
-      to   { opacity: 1; transform: translateX(0); }
-    }
-
-    /* ── DARK MODE ── */
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --black: #e8e8e5;
-        --white: #0f0f0d;
-        --off: #1a1a18;
-        --mid: #666;
-        --rule: #2c2c2a;
-        --tagline: #999;
-        --bg-text-stroke: #1e1e1c;
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function() {
+      var param = new URLSearchParams(location.search).get('theme');
+      var saved = localStorage.getItem('theme');
+      var theme = param || saved;
+      if (theme === 'dark' || theme === 'light') {
+        document.documentElement.dataset.theme = theme;
       }
+    })();
+    function toggleTheme() {
+      var isDark = document.documentElement.dataset.theme === 'dark' ||
+        (!document.documentElement.dataset.theme &&
+         window.matchMedia('(prefers-color-scheme: dark)').matches);
+      var next = isDark ? 'light' : 'dark';
+      document.documentElement.dataset.theme = next;
+      localStorage.setItem('theme', next);
     }
-
-    html[data-theme="dark"] {
-      --black: #e8e8e5;
-      --white: #0f0f0d;
-      --off: #1a1a18;
-      --mid: #666;
-      --rule: #2c2c2a;
-      --tagline: #999;
-      --bg-text-stroke: #1e1e1c;
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 640px) {
-      header { padding: 1rem 1.25rem; }
-      main { padding: 2.5rem 1.25rem; }
-      footer { padding: 1rem 1.25rem; }
-    }
-  </style>
+  </script>
 </head>
 <body>
 
@@ -225,10 +35,13 @@
 
 <header>
   <span class="header-label">Systems &amp; Craft</span>
-  <span class="header-year">Est. 2010</span>
+  <div class="header-right">
+    <span class="header-year">Est. 2010</span>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle color theme">◑</button>
+  </div>
 </header>
 
-<main>
+<main class="main--center">
   <div>
     <p class="error-code">404</p>
     <h1 class="error-label">Not Found</h1>
@@ -238,7 +51,7 @@
     <p class="message">The page you're looking for doesn't exist or has moved. Head back to the home page.</p>
     <a href="/" class="home-link">
       Back to home
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M2 7H12M8 3L12 7L8 11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </a>
