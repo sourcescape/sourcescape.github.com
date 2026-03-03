@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <script>if(new URLSearchParams(location.search).get('theme')==='dark')document.documentElement.dataset.theme='dark';</script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -16,6 +17,8 @@
       --off: #f2f2f0;
       --mid: #888;
       --rule: #d0d0cc;
+      --tagline: #444;
+      --bg-text-stroke: #e8e8e5;
     }
 
     body {
@@ -106,7 +109,7 @@
     .tagline {
       font-size: 0.92rem;
       line-height: 1.8;
-      color: #444;
+      color: var(--tagline);
       max-width: 320px;
     }
 
@@ -189,6 +192,10 @@
       transition: transform 0.15s;
     }
 
+    .personal-link svg path {
+      stroke: var(--black);
+    }
+
     .personal-link:hover svg path {
       stroke: var(--white);
     }
@@ -223,7 +230,7 @@
       font-size: 22vw;
       line-height: 1;
       color: transparent;
-      -webkit-text-stroke: 1px #e8e8e5;
+      -webkit-text-stroke: 1px var(--bg-text-stroke);
       pointer-events: none;
       z-index: -1;
       user-select: none;
@@ -239,6 +246,29 @@
     @keyframes slideRight {
       from { opacity: 0; transform: translateX(-20px); }
       to   { opacity: 1; transform: translateX(0); }
+    }
+
+    /* ── DARK MODE ── */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --black: #e8e8e5;
+        --white: #0f0f0d;
+        --off: #1a1a18;
+        --mid: #666;
+        --rule: #2c2c2a;
+        --tagline: #999;
+        --bg-text-stroke: #1e1e1c;
+      }
+    }
+
+    html[data-theme="dark"] {
+      --black: #e8e8e5;
+      --white: #0f0f0d;
+      --off: #1a1a18;
+      --mid: #666;
+      --rule: #2c2c2a;
+      --tagline: #999;
+      --bg-text-stroke: #1e1e1c;
     }
 
     /* ── RESPONSIVE ── */
@@ -303,7 +333,7 @@
       <a href="https://ryanwood.com/pages/about" class="personal-link">
         About the founder
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2 7H12M8 3L12 7L8 11" stroke="#0a0a0a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 7H12M8 3L12 7L8 11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </a>
     </div>
